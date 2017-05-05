@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <ion-title text-center>
+      Configuration du match
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content   padding class="getstart">
+  <form (submit)="getDefaults()">
+    <ion-list>
+      <ion-item>
+        <ion-label fixed>Type de Match</ion-label>
+        <ion-select [(ngModel)]="id_type_match" name="id_type_match" >
+          <ion-option *ngFor="let t of types" value="{{t.id_type_match}}">{{t.type_match}} </ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>Durée</ion-label>
+         <ion-select [(ngModel)]="id_duree" name="id_duree" >
+          <ion-option *ngFor="let d of durees" value="{{d.id_duree}}">{{d.duree}} </ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>Météo</ion-label>
+        <ion-select [(ngModel)]="id_meteo" name="id_meteo" >
+          <ion-option *ngFor="let m of meteos" value="{{m.id_meteo}}">{{m.temps}} </ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>Mon équipe</ion-label>
+         <ion-select [(ngModel)]="id_equipe" name="id_equipe" >
+          <ion-option *ngFor="let e of equipes" value="{{e.id_equipe}}">{{e.ville}} </ion-option>
+        </ion-select>
+        
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>Equipe adverse</ion-label>
+        <ion-select [(ngModel)]="id_equipe2" name="id_equipe2" >
+          <ion-option *ngFor="let f of equipes2" value="{{f.id_equipe}}">{{f.ville}} </ion-option>
+        </ion-select>
+      </ion-item>
+      
+      
+  <!--    <ion-item>
+        <span ion-datepicker (ionChanged)="setDate($event);" [value]="localDate" [min]="localDate" full="true" calendar="true" locale='fr' clear class="ScheduleDate">
+          
+        <span>{{localDate | date}} <ion-icon name="clipboard" item-left ></ion-icon> </span>
+    </span>
+      </ion-item> !-->
+    </ion-list>
+    
+    
+  </form>
+      <ion-item>
+           <ion-label fixed>Date</ion-label>
+            <ion-input type="text" placeholder="Format aaaa-mm-jj"[(ngModel)]="date_match"></ion-input>
+      </ion-item> 
+      <ion-item>
+         <ion-label fixed>Lieu</ion-label>
+         <ion-input type="text" placeholder="Entrez le lieu du match" [(ngModel)]="lieu"></ion-input>
+      </ion-item>
+      <button ion-button (click)="showConfirm2() " block color="secondary">Enregistrer le match</button>
+</ion-content>

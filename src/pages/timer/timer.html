@@ -1,0 +1,38 @@
+<ion-card *ngIf="doesTimerExist()">
+    <ion-item class="no-bottom-border item">
+        <button ion-button *ngIf="timeInSeconds && timeInSeconds >= 0" large full clear class="timer-button timer-text">{{getDisplayTime()}}</button>
+    </ion-item>
+    <ion-item class="no-bottom-border" *ngIf="timeInSeconds && timeInSeconds >= 0">
+        <button ion-button icon-left clear color="danger" small (click)="initTimer()" item-left *ngIf="canInitTimer()">
+            <ion-icon name="refresh"></ion-icon>
+            Reset
+        </button>
+        <button ion-button icon-left clear small color="secondary" (click)="pauseTimer()" item-right *ngIf="canPauseTimer()">
+            <ion-icon name="pause"></ion-icon>
+            Pause
+        </button>
+        <button ion-button icon-left clear small color="secondary" (click)="resumeTimer()" item-right *ngIf="canResumeTimer()">
+            <ion-icon name="play"></ion-icon>
+            Reprendre
+        </button>
+        <button ion-button icon-left clear small color="secondary" (click)="startTimer()" item-right *ngIf="canStartTimer()">
+            <ion-icon name="play"></ion-icon>
+            Début du match
+        </button>
+    </ion-item>
+</ion-card>
+
+<style>
+  .timer-button {
+    color:green ;
+    font-size: 5rem !important;
+    height: 1em !important;
+  }
+
+  .no-bottom-border.item .item-inner {
+      
+      border-bottom: none !important;
+  }
+</style>
+
+

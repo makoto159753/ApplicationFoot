@@ -1,0 +1,23 @@
+page-chrono {
+    .getstart {
+
+background-image: url('../../img/terrainGaelique2.jpg');
+background-size: 100% 100% !important;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+}
+
+  .timer-button {
+    color:green ;
+    font-size: 5rem !important;
+    height: 1em !important;
+  }
+
+  .no-bottom-border.item .item-inner {
+      
+      border-bottom: none !important;
+  }
+
+
+}
